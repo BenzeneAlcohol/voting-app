@@ -1,0 +1,15 @@
+.sidedrawer{
+    width:60%;
+    height: 100vh;
+    background: burlywood;
+    position:fixed;
+    top:0px;
+    left:0px;
+    z-index:150;
+    transform: translateX(-100%);
+    transition: all 0.3s ease-out;
+}
+
+.sidedrawer.anim{
+    transform: translateX(0);
+}
