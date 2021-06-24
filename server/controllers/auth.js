@@ -54,15 +54,6 @@ exports.login = async (req,res,next)=>{
 }
 
 
-exports.forgotPassword = async(req,res,next)=>{
-    res.send("Forgot");
-}
-
-
-exports.resetPassword = async(req,res,next)=>{
-    res.send("Reset Password Route");
-}
-
 
 const sendToken = (user, statusCode, res)=>{
     const token = user.getSignedToken();

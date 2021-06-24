@@ -5,7 +5,7 @@ function Navbar({toggler}) {
         <div className="Navbar">
             <div className="Navbar__logo">
                 <h2>Voting App</h2>
-                <a href="/"><i class="fas fa-poll fa-5x"></i></a>
+                <a href="/"><i className="fas fa-poll fa-5x"></i></a>
             </div>
             <ul className="Navbar__links">
                 {/* <li>
