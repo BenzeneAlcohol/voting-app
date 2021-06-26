@@ -17,15 +17,13 @@ const UserSchema = new mongoose.Schema({
         minlength: 5,
         select: false
     },
-    resetpasswordtoken: {
-        type: String
-    },
-    resetpasswordexpire: {
-        type: String
-    }
+    polls: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Poll' }]
 })
 
 UserSchema.pre("save", async function(next){
+    if(!this.isModified("password")){
+        next();
+    }
     const salt = await bcrypt.genSalt(10);
     this.password = await bcrypt.hash(this.password, salt); //this.password is basically the User object that was created. It is not the argument that is sent here.
     next();
