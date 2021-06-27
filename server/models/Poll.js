@@ -19,5 +19,5 @@ const pollSchema = new mongoose.Schema({
   voted: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
 });
 
-
-module.exports = mongoose.model('Poll', pollSchema);
+const Poll = mongoose.model('Poll', pollSchema);
+module.exports = Poll;
