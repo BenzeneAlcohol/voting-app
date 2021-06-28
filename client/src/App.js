@@ -2,11 +2,16 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import Navbar from './components/navbar/Navbar';
 import Backdrop from './components/navbar/backdrop';
 import Sidedrawer from './components/navbar/sidedrawer';
+import Polls from './components/polls/Polls'
 import {getPolls} from './actions/polls'
 import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import {useDispatch} from 'react-redux';
+import Signin from './components/auth/Signin';
+import Signup from './components/auth/Signup';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
-import {useDispatch} from 'react-redux'
+
 function App() {
   const [open, setOpener] = useState(false);
   function toggler(toggle){
@@ -16,16 +21,18 @@ function App() {
   useEffect(() => {
     dispatch(getPolls());
   }, [dispatch])
-
-  const polls = useSelector((state)=>state.polls)
-  console.log(polls);
-
   return (
-    <div>
-      <Navbar toggler={()=>toggler(true)}/>
-      <Backdrop open={open} toggler={()=>toggler(false)}/>
-      <Sidedrawer open = {open}/>
-    </div>
+    <Router>
+      <div>
+        <Navbar toggler={()=>toggler(true)}/>
+        <Backdrop open={open} toggler={()=>toggler(false)}/>
+        <Sidedrawer open = {open}/>
+        <Switch>
+          <Route exact path="/login" component={Signin}/>
+          <Route exact path="/register" component={Signup}/>
+        </Switch>
+      </div>
+    </Router>
   )
 }
 

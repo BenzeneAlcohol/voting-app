@@ -1,11 +1,17 @@
 import React from 'react'
-import './Navbar.css'
+import './Navbar.css';
+import ReactDOM from "react-dom";
+import {
+  BrowserRouter as Router,
+  Link,
+  Route
+} from "react-router-dom";
 function Navbar({toggler}) {
     return (
         <div className="Navbar">
             <div className="Navbar__logo">
                 <h2>Voting App</h2>
-                <a href="/"><i className="fas fa-poll fa-5x"></i></a>
+                <Link to="/"><i className="fas fa-poll fa-5x"></i></Link>
             </div>
             <ul className="Navbar__links">
                 {/* <li>
@@ -16,7 +22,8 @@ function Navbar({toggler}) {
                 <li>
                     <span className="auth__link">
                         <h3>
-                        <a href="/signin">Authentication</a>
+                        {/* <a href="/login">Authentication</a> */}
+                        <Link to="/login">Authentication</Link>
                         </h3>
                     </span>
                 </li>

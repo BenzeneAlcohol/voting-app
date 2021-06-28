@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const app=express();
+const cors = require('cors');
 const Authent = require('./routes/auth');
 const connectDB = require('./config/mongoose');
 const pollRoute = require('./routes/pollRoute');
@@ -9,6 +10,7 @@ connectDB();
 
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
+app.use(cors());
 app.use('/api/auth', Authent);
 app.use('/api/polls', pollRoute);
 
