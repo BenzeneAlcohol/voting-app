@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const connectDB = async() =>{
-    await mongoose.connect('mongodb://localhost/newTestDB', {useNewUrlParser: true});
+    await mongoose.connect('mongodb://localhost/finalProductiondb', {useNewUrlParser: true});
     console.log("MongoDB Connected");
 }
 

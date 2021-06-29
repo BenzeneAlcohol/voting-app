@@ -10,8 +10,9 @@ import {useDispatch} from 'react-redux';
 import Signin from './components/auth/Signin';
 import Signup from './components/auth/Signup';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
-
-
+import PrivateRoute from './components/routing/PrivateRoute';
+import CreatePoll from './components/createpoll/Createpoll';
+import Vote from './components/vote/Vote'
 function App() {
   const [open, setOpener] = useState(false);
   function toggler(toggle){
@@ -30,6 +31,9 @@ function App() {
         <Switch>
           <Route exact path="/login" component={Signin}/>
           <Route exact path="/register" component={Signup}/>
+          <Route exact path="/" component={Polls}/>
+          <PrivateRoute exact path="/create" component={CreatePoll} />
+          <PrivateRoute exact path="/polls/:id" component={Vote} />
         </Switch>
       </div>
     </Router>

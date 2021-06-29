@@ -34,7 +34,7 @@ UserSchema.methods.matchPasswords = async function(password){
 }
 
 UserSchema.methods.getSignedToken = function(){//this._id is the id of the mongoose user. No need to pass anything in the form of arguments. Basically refers to the object on which we are calling this function.
-    return jwt.sign({id: this._id},'becabaed1197bc18773095f42aa2dec21c5e9f814a8049c9030e320513ba18460f51f3', {expiresIn: '20min'} )
+    return jwt.sign({id: this._id},'becabaed1197bc18773095f42aa2dec21c5e9f814a8049c9030e320513ba18460f51f3', {expiresIn: '200h'} )
 }
 
 const User = mongoose.model("User", UserSchema);

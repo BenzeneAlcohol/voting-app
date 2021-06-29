@@ -117,7 +117,10 @@ exports.votePoll = async (req,res,next)=>{
             poll.voted.push(userID);
             poll.options = vote;
             await poll.save();
-            return res.status(201).json(poll);
+            return res.status(201).json({
+                success: true,
+                poll
+            });
         }
         else{
             res.status(400).json({
@@ -126,7 +129,7 @@ exports.votePoll = async (req,res,next)=>{
             })
         }
     } catch (error) {
-        res.status(401).json({
+        res.status(400).json({
             success: false,
             message: error.message
         })

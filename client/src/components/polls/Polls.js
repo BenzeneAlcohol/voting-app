@@ -6,8 +6,8 @@ function Polls() {
     const polls = useSelector((state)=>state.polls)
     console.log(polls);
     return (
-        <div>
-            This is Polls component.
+        <div className="Pollscontainer">
+            {polls.map((poll)=><Poll poll={poll}/>)}
         </div>
     )
 }

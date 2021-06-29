@@ -1,0 +1,36 @@
+.VotePage{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px;
+    padding: 3%;
+}
+
+.radioInput{
+    margin: 3%;
+}
+
+.btn__btn{
+    align-items: center;
+    margin-top: 3%;
+    background-color: thistle;
+    border: none;
+    transition: 0.2s;
+    /* margin-top: 0.5rem; */
+    width: 100px;
+    height: 30px;
+}
+
+
+.formVotePage{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.formVoteHandler{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
