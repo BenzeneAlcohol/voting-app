@@ -13,6 +13,7 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import PrivateRoute from './components/routing/PrivateRoute';
 import CreatePoll from './components/createpoll/Createpoll';
 import Vote from './components/vote/Vote'
+import Results from'./components/results/Results';
 function App() {
   const [open, setOpener] = useState(false);
   function toggler(toggle){
@@ -34,6 +35,7 @@ function App() {
           <Route exact path="/" component={Polls}/>
           <PrivateRoute exact path="/create" component={CreatePoll} />
           <PrivateRoute exact path="/polls/:id" component={Vote} />
+          <PrivateRoute exact path="/polls/results/:id" component={Results} />
         </Switch>
       </div>
     </Router>

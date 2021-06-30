@@ -1,5 +1,5 @@
 .pollContainer{
-    background: #FFD384;
+    background-image: linear-gradient(to right, #f8b786 , #f38381);
     width: 500px;
     overflow: hidden;
     box-shadow: 0px 0px 9px -5px;
@@ -28,18 +28,19 @@
     justify-content: center;
 }
 
-.btn button{
+.btn .btnbtnbtn{
+    background: #E3E3E3;
     /* padding: 0.5rem; */
-    background-color: #FFF9B0;
     border: none;
     transition: 0.2s;
     /* margin-top: 0.5rem; */
     width: 100px;
     height: 30px;
+    font-weight: bold;
 }
 
 .btn button:hover{
-    background-color: #FFAEC0;
+    background-color: #5D6874;
 }
 
 .link{
@@ -54,3 +55,8 @@
     list-style-type:none;
  }
 
+.btnholder{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

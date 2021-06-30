@@ -19,12 +19,21 @@ function Poll({poll}) {
                     {/* {poll.options[0].option} */}
                 </div>
             </div>
-            <div className="btn">
-                <button>
-                    <Link to={`/polls/${poll._id}`} className="link">
-                        VOTE
+            <div className="btnholder">
+                <div className="btn">
+                <Link to={`/polls/${poll._id}`} className="link">
+                    <button className="btnbtnbtn">
+                    VOTE
+                    </button>
                     </Link>
-                </button>
+                </div>
+                <div className="btn">
+                <Link to={`/polls/results/${poll._id}`} className="link">
+                    <button className="btnbtnbtn">
+                    RESULTS
+                    </button>
+                    </Link>
+                </div>
             </div>
         </div>
     )

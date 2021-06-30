@@ -34,3 +34,112 @@
     justify-content: center;
     flex-direction: column;
 }
+
+.wrapper{
+    width: 350px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 5px 5px 30px rgba(0,0,0,0.2);
+  }
+  .wrapper .title{
+    color: #fff;
+    line-height: 65px;
+    text-align: center;
+    background: #333;
+    font-size: 25px;
+    font-weight: 500;
+    border-radius: 10px 10px 0 0;
+  }
+  .wrapper .box{
+    padding: 20px 30px;
+    background: #fff;
+    border-radius: 10px;
+  }
+  .wrapper .box label{
+    display: flex;
+    height: 53px;
+    width: 100%;
+    align-items: center;
+    border: 1px solid lightgrey;
+    border-radius: 50px;
+    margin: 10px 0;
+    padding-left: 20px;
+    cursor: default;
+    transition: all 0.3s ease;
+  }
+  .radioInput:checked ~ .radioLabel{
+    background: #333;
+    border-color: #333;
+  }
+  .wrapper .box label .dot{
+    height: 20px;
+    width: 20px;
+    background: #d9d9d9;
+    border-radius: 50%;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  .radioInput:checked ~ .radioLabel .dot{
+    background: #fff;
+  }
+  .box label .dot::before{
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(2);
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+  }
+  .radioInput:checked ~ .radioLabel .dot::before{
+    background: #333;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  .wrapper .box label .text{
+    color: #333;
+    font-size: 18px;
+    font-weight: 400;
+    padding-left: 10px;
+    transition: color 0.3s ease;
+  }
+  .radioInput:checked ~ .radioLabel .text{
+    color: #fff;
+  }
+  .wrapper .box input[type="radio"]{
+    /* position: relative;
+    top: 52px;
+    left: 16px;
+    z-index: 20; */
+    visibility: hidden;
+  }   
+
+.finalMessage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.formbtn1__formbtn{
+    font-family: 'Source Sans Pro', sans-serif;
+    width: 200px;
+    height: 50px;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    background-color: #0ba29d;
+    box-shadow: inset 0 0 0 0 #c3ec52;
+    transition: ease-out 0.3s;
+    font-size: 16px;
+    outline: none;
+    margin-top: 10%;
+    font-weight: bold;
+}
+
+.formbtn1__formbtn:hover{
+    box-shadow: inset 200px 0 0 0 #c3ec52;
+    cursor: pointer;
+    color: black;
+}
